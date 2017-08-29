@@ -1,0 +1,37 @@
+
+
+body {
+  background-color: #163a7f;
+}
+
+.main {
+  display:block;
+  width: 218px;
+  background-color: #698995;
+  //padding: 75px;
+  margin-top: 30px;
+}
+h4 {
+    text-align: center;
+}
+
+input {
+  margin: 7px;
+}
+
+.calcButton {
+  margin: 7px;
+  height: 40px;
+  width: 40px;
+  background-color: powderblue;
+  border-radius: 10px;
+}
+
+.inputField {
+  width: 200px;
+}
+
+.equals {
+  width: 110px;
+  margin-left: 55px;
+}
