@@ -3,9 +3,9 @@
 (function(){
   'use strict';
     // all your code here
-    function Calculator (accum) {
+    function Calculator () {
       this.accum = 0;
-      this.number = number;
+      this.number = 0;
 
       this.addition = function(number){
         this.accum = this.accum + number;
@@ -32,10 +32,16 @@
         return this.accum;
       };
 
+      this.buttonSearch = function(e) {
+        console.log("inside buttonSearch ", e.target.id);
+      };
+
     }
 
-    document.getElementById("buttonList").addEventListener("click", function(e) {
+    var calc = new Calculator();
 
+    document.getElementById("buttonList").addEventListener("click", function(e) {
+      calc.buttonSearch(e);
     	if(e.target && e.target.nodeName == "BUTTON") {
     		// List item found!  Output the ID!
         console.log("e.target.nodeName   ", e.target.nodeName);
@@ -69,5 +75,5 @@
         }
     });
 
-    //var calc = new Calculator();
+
 })();
