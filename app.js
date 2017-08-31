@@ -37,9 +37,9 @@
         if (this.previousMath === ""){
           this.accum = 0;
         }
-        this.number = -1 * (Number(this.getNumber()));
+        this.number =  (Number(this.getNumber()));
         console.log(this.number);
-        this.accum = this.number - Number(this.accum) ;
+        this.accum = -1 * (this.number - Number(this.accum)) ;
         console.log("this.accum", this.accum);
         this.clearDisplay();
 
