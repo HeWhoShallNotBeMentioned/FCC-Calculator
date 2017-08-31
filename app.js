@@ -73,6 +73,46 @@
 
       this.buttonSearch = function(e) {
         console.log("inside buttonSearch ", e.target.id);
+        if(e.target && e.target.nodeName == "BUTTON") {
+          // List item found!  Output the ID!
+          // console.log("e.target.nodeName   ", e.target.nodeName);
+          // console.log("Button ", e.target.id, " was clicked!");
+          let buttonClick = Number(e.target.id);
+          if ( isNaN(buttonClick )) {
+            buttonClick = e.target.id;
+          }
+
+          // console.log("buttonClick  ", buttonClick);
+          // console.log("typeof buttonClick ", typeof buttonClick);
+            if ( (buttonClick >= 0 && buttonClick <= 9) || buttonClick === ".") {
+              this.display(buttonClick);
+
+              console.log("it's a number or .");
+            } else if (buttonClick === "+" || buttonClick === "-" || buttonClick === "x" || buttonClick === "/"){
+              console.log("it's a + or - or x or /");
+              //buttonClick2 = "plus";
+              //console.log("buttonClick2 right below plus", buttonClick2);
+              this.calculate(buttonClick);
+            // } else if (buttonClick === "-"){
+            //   console.log("it's a -");
+            // } else if (buttonClick === "x"){
+            //   console.log("it's a *");
+            // } else if (buttonClick === "/"){
+            //   console.log("it's a /");
+            } else if (buttonClick === "C"){
+              this.clearAccum();
+              this.clearDisplay();
+              console.log("it's a C");
+            } else if (buttonClick === "="){
+              console.log("it's a =");
+              this.showTotal();
+              this.clearAccum();
+            }
+              else {
+              console.log("not sure what it is");
+            }
+          }
+
       };
 
       this.display = function(something){
@@ -144,45 +184,7 @@
       //document.getElementById("inputField").defaultValue = 0;
       calc.buttonSearch(e);
 
-    	if(e.target && e.target.nodeName == "BUTTON") {
-    		// List item found!  Output the ID!
-        // console.log("e.target.nodeName   ", e.target.nodeName);
-    		// console.log("Button ", e.target.id, " was clicked!");
-        let buttonClick = Number(e.target.id);
-        if ( isNaN(buttonClick )) {
-          buttonClick = e.target.id;
-        }
 
-        // console.log("buttonClick  ", buttonClick);
-        // console.log("typeof buttonClick ", typeof buttonClick);
-          if ( (buttonClick >= 0 && buttonClick <= 9) || buttonClick === ".") {
-            calc.display(buttonClick);
-
-            console.log("it's a number or .");
-          } else if (buttonClick === "+" || buttonClick === "-" || buttonClick === "x" || buttonClick === "/"){
-            console.log("it's a + or - or x or /");
-            //buttonClick2 = "plus";
-            //console.log("buttonClick2 right below plus", buttonClick2);
-            calc.calculate(buttonClick);
-          // } else if (buttonClick === "-"){
-          //   console.log("it's a -");
-          // } else if (buttonClick === "x"){
-          //   console.log("it's a *");
-          // } else if (buttonClick === "/"){
-          //   console.log("it's a /");
-          } else if (buttonClick === "C"){
-            calc.clearAccum();
-            calc.clearDisplay();
-            console.log("it's a C");
-          } else if (buttonClick === "="){
-            console.log("it's a =");
-            calc.showTotal();
-            calc.clearAccum();
-          }
-            else {
-            console.log("not sure what it is");
-          }
-        }
     });
 
 
